@@ -9,6 +9,15 @@ public class Book {
     private int id;
     private String bookName;
     private String bookAuthor;
+    private boolean available;
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
 
     public int getId() {
         return id;
@@ -33,13 +42,14 @@ public class Book {
     public void setBookAuthor(String bookAuthor) {
         this.bookAuthor = bookAuthor;
     }
-
     @Override
     public String toString() {
-        return "Books{" +
+        return "Book{" +
                 "id=" + id +
                 ", bookName='" + bookName + '\'' +
                 ", bookAuthor='" + bookAuthor + '\'' +
+                ", available=" + available +
                 '}';
     }
+
 }

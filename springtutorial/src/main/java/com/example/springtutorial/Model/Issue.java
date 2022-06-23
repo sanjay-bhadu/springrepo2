@@ -1,17 +1,24 @@
 package com.example.springtutorial.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 
 @Entity
 public class Issue {
-    @OneToOne(optional = false)
-    @JoinColumn(name = "book_id", nullable = false)
-    private Book book;
     @Id
+   private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @ManyToOne
+   @JoinColumn(name = "book_id")
+   private Book book;
     private String personName;
 
     public Book getBook() {
